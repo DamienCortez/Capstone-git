@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>235395250738-3sn1hmr2i4v9r00jkab7hj60vmfvakkg.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.235395250738-3sn1hmr2i4v9r00jkab7hj60vmfvakkg</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB5l0jnBcfEmivRugYVgNY4s1X-wE9WEcU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>235395250738</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.porterWellnessApp</string>
+	<key>PROJECT_ID</key>
+	<string>porter-wellness-app</string>
+	<key>STORAGE_BUCKET</key>
+	<string>porter-wellness-app.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:235395250738:ios:b3037413404455e060da2b</string>
+	<key>DATABASE_URL</key>
+	<string>https://porter-wellness-app-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>
