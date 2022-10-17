@@ -6,6 +6,8 @@ import './home_screen.dart';
 class AssessmentPrompt extends StatefulWidget {
   AssessmentPrompt();
 
+  static const routeName = '/assessment-prompt';
+
   @override
   State<AssessmentPrompt> createState() => _AssessmentPromptState();
 }
