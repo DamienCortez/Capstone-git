@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import './assessment_prompt_screen.dart';
+import '../widgets/app_drawer.dart';
+
 class AssessmentScreen extends StatefulWidget {
   AssessmentScreen();
 
@@ -25,7 +28,7 @@ class _AssessmentScreenState extends State<AssessmentScreen> {
           ),
         ),
       ),
-      drawer: const Drawer(),
+      drawer: AppDrawer(),
     );
   }
 }

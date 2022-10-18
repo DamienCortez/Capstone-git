@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import './screens/splash_screen.dart';
 import './screens/assessment_screen.dart';
 import './screens/home_screen.dart';
+import './screens/assessment_prompt_screen.dart';
 
 void main() => runApp(PorterWellness());
 
@@ -23,6 +24,7 @@ class _PorterWellnessApp extends State<PorterWellness> {
       routes: {
         AssessmentScreen.routeName: (ctx) => AssessmentScreen(),
         HomeScreen.routeName: (ctx) => HomeScreen(),
+        AssessmentPrompt.routeName: (ctx) => AssessmentPrompt(),
       },
     );
   }
