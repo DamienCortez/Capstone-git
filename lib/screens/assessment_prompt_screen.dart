@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import './assessment_screen.dart';
 import './home_screen.dart';
 
+/// Created by Jaden Watt (CBU class of '23)
+/// Capstone 2022-23
 class AssessmentPrompt extends StatefulWidget {
   AssessmentPrompt();
 

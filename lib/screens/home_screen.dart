@@ -4,6 +4,8 @@ import './assessment_screen.dart';
 import './assessment_prompt_screen.dart';
 import '../widgets/app_drawer.dart';
 
+/// Created by Jaden Watt (CBU class of '23)
+/// Capstone 2022-23
 class HomeScreen extends StatefulWidget {
   HomeScreen();
 

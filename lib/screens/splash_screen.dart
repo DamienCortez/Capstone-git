@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import './assessment_prompt_screen.dart';
 
+/// Created by Jaden Watt (CBU class of '23)
+/// Capstone 2022-23
 class SplashScreen extends StatefulWidget {
   SplashScreen();
 

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import '../screens/assessment_prompt_screen.dart';
 
+/// Created by Jaden Watt (CBU class of '23)
+/// Capstone 2022-23
 class AppDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -17,6 +20,15 @@ class AppDrawer extends StatelessWidget {
             },
           ),
           const Divider(),
+          ListTile(
+            leading: const Icon(Icons.logout),
+            title: const Text('logout'),
+            onTap: () {
+              FirebaseAuth.instance.signOut();
+              Navigator.of(context).popUntil((route) =>
+                  route.isFirst); // sends to login screen when pressed
+            },
+          )
         ],
       ),
     );
