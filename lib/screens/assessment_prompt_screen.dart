@@ -33,8 +33,6 @@ class _AssessmentPromptState extends State<AssessmentPrompt> {
             child: Container(
               height: mediaQuery.size.height * 0.88,
               width: mediaQuery.size.width * 0.9,
-              // height: mediaQuery.size.height,
-              // width: mediaQuery.size.width,
               padding: mediaQuery.padding,
               child: Card(
                 color: Theme.of(context).cardColor,
