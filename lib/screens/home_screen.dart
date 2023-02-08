@@ -21,6 +21,15 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Home Screen'),
+        actions: [
+          // Container(
+          //   width: 30,
+          //   child: Image.asset(
+          //     'assets/images/profile_pic.png',
+          //   ),
+          // ),
+          Icon(Icons.account_circle_rounded, size: 40),
+        ],
       ),
       body: const Center(
         child: Text(
@@ -32,6 +41,17 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       drawer: AppDrawer(),
+      bottomNavigationBar: BottomAppBar(
+        color: Theme.of(context).primaryColor,
+        child: Row(children: [
+          Icon(Icons.home_outlined, size: 40),
+          Icon(Icons.home_outlined, size: 40),
+          Icon(Icons.home_outlined, size: 40),
+          Icon(Icons.home_outlined, size: 40),
+        ]),
+
+        //Icon(Icons.home_outlined, size: 40),
+      ),
     );
   }
 }
