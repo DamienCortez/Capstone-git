@@ -29,7 +29,7 @@ class _PorterWellnessApp extends State<PorterWellness> {
                 builder: (ctx, userSnapshot) {
                   // checks if we are logged in, then show the Chat Screen
                   if (userSnapshot.hasData) {
-                    return HomeScreen();
+                    return AssessmentPrompt();
                   }
                   return AuthScreen();
                 },
