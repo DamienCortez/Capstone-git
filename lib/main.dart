@@ -36,7 +36,7 @@ class _PorterWellnessApp extends State<PorterWellness> {
               ),
         theme: ThemeData(
           primaryColor: const Color.fromRGBO(255, 247, 237, 1),
-          cardColor: const Color.fromRGBO(78, 152, 142, 1),
+          cardColor: const Color.fromRGBO(57,114,105,0.83),
           buttonColor: const Color.fromRGBO(57, 114, 105, 1),
           buttonTheme: ButtonTheme.of(context).copyWith(
             buttonColor: const Color.fromRGBO(57, 114, 105, 1),

@@ -91,6 +91,13 @@ flutter:
     - family: Belleza
       fonts:
         - asset: assets/Belleza-Regular.ttf
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Regular.otf
+        - asset: assets/fonts/Inter-Bold.otf
+          weight: 700
+        - asset: assets/fonts/Inter-ExtraBold.otf
+          weight: 800
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
