@@ -26,7 +26,8 @@ class _MatchesScreenState extends State<MatchesScreen> {
           padding: mediaQuery.padding,
           decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/background.png'), fit: BoxFit.cover),
+                image: AssetImage('assets/PostAssesment.png'),
+                fit: BoxFit.cover),
           ),
         ),
         // ListView(
