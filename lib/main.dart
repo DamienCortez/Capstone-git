@@ -6,6 +6,7 @@ import './screens/splash_screen.dart';
 import './screens/assessment_screen.dart';
 import './screens/home_screen.dart';
 import './screens/assessment_prompt_screen.dart';
+import './screens/matches_screen.dart';
 import './screens/auth_screen.dart';
 
 void main() => runApp(PorterWellness());
@@ -36,7 +37,7 @@ class _PorterWellnessApp extends State<PorterWellness> {
               ),
         theme: ThemeData(
           primaryColor: const Color.fromRGBO(255, 247, 237, 1),
-          cardColor: const Color.fromRGBO(57,114,105,0.83),
+          cardColor: const Color.fromRGBO(57, 114, 105, 0.83),
           buttonColor: const Color.fromRGBO(57, 114, 105, 1),
           buttonTheme: ButtonTheme.of(context).copyWith(
             buttonColor: const Color.fromRGBO(57, 114, 105, 1),
@@ -50,6 +51,7 @@ class _PorterWellnessApp extends State<PorterWellness> {
           AssessmentScreen.routeName: (ctx) => AssessmentScreen(),
           HomeScreen.routeName: (ctx) => HomeScreen(),
           AssessmentPrompt.routeName: (ctx) => AssessmentPrompt(),
+          MatchesScreen.routeName: (ctx) => MatchesScreen(),
         },
       ),
     );
