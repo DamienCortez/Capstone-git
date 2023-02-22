@@ -72,7 +72,7 @@ class _MatchesScreenState extends State<MatchesScreen> {
                         borderRadius: BorderRadius.circular(20)),
                     child: Center(
                       child: Text(
-                        "Card ${i + 1}",
+                        "Jessica Gaddy",
                         style: TextStyle(fontSize: 32),
                       ),
                     ),
