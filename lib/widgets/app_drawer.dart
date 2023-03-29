@@ -10,6 +10,8 @@ class AppDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: Theme.of(context).primaryColor,
+      //shape: ,
       child: Column(
         children: <Widget>[
           AppBar(title: const Text('Drawer')),

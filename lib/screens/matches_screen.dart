@@ -26,58 +26,39 @@ class _MatchesScreenState extends State<MatchesScreen> {
           padding: mediaQuery.padding,
           decoration: const BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('assets/PostAssesment.png'),
+                image: AssetImage('assets/background-nologo.png'),
                 fit: BoxFit.cover),
           ),
         ),
-        // ListView(
-        //   // This next line does the trick.
-        //   scrollDirection: Axis.horizontal,
-        //   children: <Widget>[
-        //     Container(
-        //       width: 160.0,
-        //       color: Colors.red,
-        //     ),
-        //     Container(
-        //       width: 160.0,
-        //       color: Colors.blue,
-        //     ),
-        //     Container(
-        //       width: 160.0,
-        //       color: Colors.green,
-        //     ),
-        //     Container(
-        //       width: 160.0,
-        //       color: Colors.yellow,
-        //     ),
-        //     Container(
-        //       width: 160.0,
-        //       color: Colors.orange,
-        //     ),
-        //   ],
-        // ),
         Center(
           child: SizedBox(
-            height: 200, // card height
+            height: 460, // card height
             child: PageView.builder(
               itemCount: 10,
               controller: PageController(viewportFraction: 0.7),
               onPageChanged: (int index) => setState(() => _index = index),
               itemBuilder: (_, i) {
                 return Transform.scale(
-                  scale: i == _index ? 1 : 0.9,
-                  child: Card(
-                    elevation: 6,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
-                    child: Center(
-                      child: Text(
-                        "Jessica Gaddy",
-                        style: TextStyle(fontSize: 32),
+                    scale: i == _index ? 1 : 0.9,
+                    child: Card(
+                      elevation: 6,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)),
+                      child: Padding(
+                        padding: EdgeInsets.all(0.0),
+                        child: Column(children: <Widget>[
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(20.0),
+                            child: Image.asset('assets/card.png'),
+                          ),
+
+                          // Text(
+                          //   "Jessica Gaddy",
+                          //   style: TextStyle(fontSize: 32),
+                          // ),
+                        ]),
                       ),
-                    ),
-                  ),
-                );
+                    ));
               },
             ),
           ),
