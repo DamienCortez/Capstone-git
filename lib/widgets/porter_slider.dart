@@ -13,6 +13,7 @@ class _PorterSliderState extends State<PorterSlider> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         // const Padding(
         //   padding: EdgeInsets.only(left: 15.0),
@@ -26,13 +27,25 @@ class _PorterSliderState extends State<PorterSlider> {
         //     ),
         //   ),
         // ),
+        Padding(
+          padding: EdgeInsets.only(left: 20.0),
+          child: Text(
+            'How would you rate your satisfaction in this area?',
+            style: TextStyle(
+              fontFamily: 'Montserrat',
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+        ),
         Slider(
           min: 1,
           max: 5,
           value: _rating,
           divisions: 4,
           // label: '${_rating.toInt()}', // this shows the value above each section as an int
-          activeColor: const Color.fromRGBO(57, 114, 105, 1),
+          activeColor: Color.fromARGB(255, 44, 88, 82),
           inactiveColor: Colors.white,
           onChanged: (value) {
             setState(() {
@@ -48,12 +61,9 @@ class _PorterSliderState extends State<PorterSlider> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: const [
-              Text('Not Likely'),
-              Text(
-                'Average',
-                style: TextStyle(),
-              ),
-              Text('Likely'),
+              Text('Unsatisfied'),
+              Text('Average\t\t\t\t'),
+              Text('Satisfied'),
             ],
           ),
         ),

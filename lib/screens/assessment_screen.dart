@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intro_slider/intro_slider.dart';
 
 import '../widgets/app_drawer.dart';
 import '../widgets/porter_slider.dart';
@@ -20,9 +21,7 @@ class _AssessmentScreenState extends State<AssessmentScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).cardColor,
       appBar: AppBar(
-        // foregroundColor: Theme.of(context).primaryColor,
         backgroundColor: Theme.of(context).cardColor,
         elevation: 0,
         actions: [
@@ -34,7 +33,10 @@ class _AssessmentScreenState extends State<AssessmentScreen> {
                 iconSize: 32,
                 // color: Colors.white,
               ),
-              const CircleAvatar(backgroundColor: Colors.white),
+              const CircleAvatar(
+                backgroundColor: Colors.white,
+                backgroundImage: AssetImage('assets/headshot.jpeg'),
+              ),
               const SizedBox(
                 width: 10,
               )
@@ -43,97 +45,120 @@ class _AssessmentScreenState extends State<AssessmentScreen> {
         ],
       ),
       drawer: AppDrawer(),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
-          SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 15.0),
-            child: Text(
-              'STAGE 1 OF 9',
-              style: TextStyle(
+      body: PageView(
+        children: [
+          Scaffold(
+            backgroundColor: Theme.of(context).cardColor,
+            body: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                SizedBox(
+                  height: 20,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 20.0),
+                  child: Text(
+                    'STAGE 1 OF 9',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 12,
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Divider(
                   color: Colors.white,
-                  fontSize: 12,
-                  fontFamily: 'Montserrat',
-                  fontWeight: FontWeight.bold),
+                  indent: 15,
+                  endIndent: 15,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 20.0),
+                  child: Text(
+                    'Let\'s learn about your emotions.',
+                    style: TextStyle(
+                      fontFamily: 'Belleza',
+                      fontSize: 48,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20),
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: 20.0,
+                    right: 20.0,
+                  ),
+                  child: Text(
+                    'Phyisical wellness is about adopting healthy habits such as routine medical exams, adequate sleep, a balanced diet, regular exercise, and more.',
+                    style: TextStyle(
+                      fontFamily: 'Belleza',
+                      fontSize: 18,
+                      color: Colors.white,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                SizedBox(height: 50),
+                PorterSlider(),
+              ],
             ),
           ),
-          Divider(
-            color: Colors.white,
-            indent: 15,
-            endIndent: 15,
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 15.0),
-            child: Text(
-              'Let\'s learn about your emotions.',
-              style: TextStyle(
-                fontFamily: 'Belleza',
-                fontSize: 48,
-                color: Colors.white,
-              ),
+          Scaffold(
+            backgroundColor: Theme.of(context).cardColor,
+            body: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                SizedBox(
+                  height: 20,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 20.0),
+                  child: Text(
+                    'STAGE 2 OF 9',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 12,
+                        fontFamily: 'Montserrat',
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Divider(
+                  color: Colors.white,
+                  indent: 15,
+                  endIndent: 15,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 20.0),
+                  child: Text(
+                    'Let\'s learn about your emotions.',
+                    style: TextStyle(
+                      fontFamily: 'Belleza',
+                      fontSize: 48,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20),
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: 20.0,
+                    right: 20.0,
+                  ),
+                  child: Text(
+                    'Mental/Emotional wellness encompasses optimism, self-esteem, self-acceptance, and the ability to experience and cope with feelings independently and interpersonally.',
+                    style: TextStyle(
+                      fontFamily: 'Belleza',
+                      fontSize: 18,
+                      color: Colors.white,
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                SizedBox(height: 50),
+                PorterSlider(),
+              ],
             ),
           ),
-          SizedBox(height: 50),
-          Padding(
-            padding: EdgeInsets.only(left: 15.0),
-            child: Text(
-              'When in need of help I tend to panic.',
-              style: TextStyle(
-                fontFamily: 'Montserrat',
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-          ),
-          PorterSlider(),
-          SizedBox(height: 15),
-          Padding(
-            padding: EdgeInsets.only(left: 15.0),
-            child: Text(
-              'When in need of help I tend to panic.',
-              style: TextStyle(
-                fontFamily: 'Montserrat',
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-          ),
-          PorterSlider(),
-          SizedBox(height: 15),
-          Padding(
-            padding: EdgeInsets.only(left: 15.0),
-            child: Text(
-              'When in need of help I tend to panic.',
-              style: TextStyle(
-                fontFamily: 'Montserrat',
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-          ),
-          PorterSlider(),
-          SizedBox(height: 15),
-          SizedBox(height: 15),
-          Padding(
-            padding: EdgeInsets.only(left: 15.0),
-            child: Text(
-              'When in need of help I tend to panic.',
-              style: TextStyle(
-                fontFamily: 'Montserrat',
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-            ),
-          ),
-          PorterSlider(),
-          SizedBox(height: 15),
         ],
       ),
     );
