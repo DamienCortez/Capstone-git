@@ -27,7 +27,7 @@ class _PorterSliderState extends State<PorterSlider> {
         //     ),
         //   ),
         // ),
-        Padding(
+        const Padding(
           padding: EdgeInsets.only(left: 20.0),
           child: Text(
             'How would you rate your satisfaction in this area?',
