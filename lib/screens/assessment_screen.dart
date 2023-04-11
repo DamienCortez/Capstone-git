@@ -1,141 +1,245 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/app_drawer.dart';
 import '../widgets/porter_slider.dart';
 
-/// Created by Jaden Watt (CBU class of '23)
-/// Capstone 2022-23
 class AssessmentScreen extends StatefulWidget {
-  AssessmentScreen();
+  var pageNum;
+  var title;
+  var subTitle =
+      'Physical wellness is about adopting healthy habits such as routine medical exams, adequate sleep, a balanced diet, regular exercise, and more.';
+  var firstButton;
+  var secondButton;
+  var thirdButton;
+  var fourthButton;
+  var fifthButton;
+  var sixthButton;
+  var firstOption;
+  var secondOption;
+  var thirdOption;
+  var fourthOption;
+  var fifthOption;
+  var sixthOption;
 
-  static const routeName = '/assessment';
+  AssessmentScreen({
+    @required this.pageNum,
+    @required this.title,
+    @required this.subTitle,
+    @required this.firstButton,
+    @required this.secondButton,
+    @required this.thirdButton,
+    @required this.fourthButton,
+    @required this.fifthButton,
+    @required this.sixthButton,
+    @required this.firstOption,
+    @required this.secondOption,
+    @required this.thirdOption,
+    @required this.fourthOption,
+    @required this.fifthOption,
+    @required this.sixthOption,
+  });
 
   @override
   State<AssessmentScreen> createState() => _AssessmentScreenState();
 }
 
 class _AssessmentScreenState extends State<AssessmentScreen> {
-  var _rating = 3.0;
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Theme.of(context).cardColor,
-      appBar: AppBar(
-        // foregroundColor: Theme.of(context).primaryColor,
-        backgroundColor: Theme.of(context).cardColor,
-        elevation: 0,
-        actions: [
-          Row(
-            children: [
-              IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.notifications_none_outlined),
-                iconSize: 32,
-                // color: Colors.white,
-              ),
-              const CircleAvatar(backgroundColor: Colors.white),
-              const SizedBox(
-                width: 10,
-              )
-            ],
-          ),
-        ],
-      ),
-      drawer: AppDrawer(),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
-          SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 15.0),
-            child: Text(
-              'STAGE 1 OF 9',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 12,
-                  fontFamily: 'Montserrat',
-                  fontWeight: FontWeight.bold),
-            ),
-          ),
-          Divider(
-            color: Colors.white,
-            indent: 15,
-            endIndent: 15,
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 15.0),
-            child: Text(
-              'Let\'s learn about your emotions.',
-              style: TextStyle(
-                fontFamily: 'Belleza',
-                fontSize: 48,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const SizedBox(height: 20),
+        Padding(
+          padding: const EdgeInsets.only(left: 20.0),
+          child: Text(
+            'STAGE ${widget.pageNum} OF 6',
+            style: const TextStyle(
                 color: Colors.white,
-              ),
-            ),
-          ),
-          SizedBox(height: 50),
-          Padding(
-            padding: EdgeInsets.only(left: 15.0),
-            child: Text(
-              'When in need of help I tend to panic.',
-              style: TextStyle(
+                fontSize: 12,
                 fontFamily: 'Montserrat',
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+                fontWeight: FontWeight.bold),
+          ),
+        ),
+        const Divider(
+          color: Colors.white,
+          indent: 15,
+          endIndent: 15,
+        ),
+        Padding(
+          padding: const EdgeInsets.only(left: 20.0),
+          child: Text(
+            'Let\'s learn about your ${widget.title}.',
+            style: const TextStyle(
+              fontFamily: 'Belleza',
+              fontSize: 45,
+              color: Colors.white,
             ),
           ),
-          PorterSlider(),
-          SizedBox(height: 15),
-          Padding(
-            padding: EdgeInsets.only(left: 15.0),
-            child: Text(
-              'When in need of help I tend to panic.',
-              style: TextStyle(
-                fontFamily: 'Montserrat',
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+        ),
+        const SizedBox(height: 20),
+        Padding(
+          padding: const EdgeInsets.only(
+            left: 20.0,
+            right: 20.0,
+          ),
+          child: Text(
+            widget.subTitle,
+            style: const TextStyle(
+              fontFamily: 'Belleza',
+              fontSize: 18,
+              color: Colors.white,
+            ),
+            textAlign: TextAlign.center,
+          ),
+        ),
+        const SizedBox(height: 30),
+        const PorterSlider(),
+        const SizedBox(height: 30),
+        const Padding(
+          padding: EdgeInsets.only(left: 20.0),
+          child: Text(
+            'Select up to three areas of focus or growth.',
+            style: TextStyle(
+              fontFamily: 'Montserrat',
+              fontSize: 14,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
             ),
           ),
-          PorterSlider(),
-          SizedBox(height: 15),
-          Padding(
-            padding: EdgeInsets.only(left: 15.0),
-            child: Text(
-              'When in need of help I tend to panic.',
-              style: TextStyle(
-                fontFamily: 'Montserrat',
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+        ),
+        ListTile(
+          visualDensity: VisualDensity(vertical: -4),
+          leading: Radio(
+            toggleable: true,
+            value: 'first',
+            groupValue: widget.firstButton ? 'first' : '',
+            activeColor: Theme.of(context).buttonColor,
+            onChanged: (value) {
+              setState(() {
+                widget.firstButton = !widget.firstButton;
+              });
+            },
+          ),
+          title: Text(
+            widget.firstOption,
+            style: const TextStyle(
+              color: Colors.white,
+              fontFamily: 'Montserrat',
+              fontWeight: FontWeight.bold,
             ),
           ),
-          PorterSlider(),
-          SizedBox(height: 15),
-          SizedBox(height: 15),
-          Padding(
-            padding: EdgeInsets.only(left: 15.0),
-            child: Text(
-              'When in need of help I tend to panic.',
-              style: TextStyle(
-                fontFamily: 'Montserrat',
-                fontSize: 14,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
+        ),
+        ListTile(
+          visualDensity: VisualDensity(vertical: -4),
+          leading: Radio(
+            toggleable: true,
+            value: 'second',
+            groupValue: widget.secondButton ? 'second' : '',
+            activeColor: Theme.of(context).buttonColor,
+            onChanged: (value) {
+              setState(() {
+                widget.secondButton = !widget.secondButton;
+              });
+            },
+          ),
+          title: Text(
+            widget.secondOption,
+            style: const TextStyle(
+              color: Colors.white,
+              fontFamily: 'Montserrat',
+              fontWeight: FontWeight.bold,
             ),
           ),
-          PorterSlider(),
-          SizedBox(height: 15),
-        ],
-      ),
+        ),
+        ListTile(
+          visualDensity: VisualDensity(vertical: -4),
+          leading: Radio(
+            toggleable: true,
+            value: 'third',
+            groupValue: widget.thirdButton ? 'third' : '',
+            activeColor: Theme.of(context).buttonColor,
+            onChanged: (value) {
+              setState(() {
+                widget.thirdButton = !widget.thirdButton;
+              });
+            },
+          ),
+          title: Text(
+            widget.thirdOption,
+            style: const TextStyle(
+              color: Colors.white,
+              fontFamily: 'Montserrat',
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        ListTile(
+          visualDensity: VisualDensity(vertical: -4),
+          leading: Radio(
+            toggleable: true,
+            value: 'fourth',
+            groupValue: widget.fourthButton ? 'fourth' : '',
+            activeColor: Theme.of(context).buttonColor,
+            onChanged: (value) {
+              setState(() {
+                widget.fourthButton = !widget.fourthButton;
+              });
+            },
+          ),
+          title: Text(
+            widget.fourthOption,
+            style: const TextStyle(
+              color: Colors.white,
+              fontFamily: 'Montserrat',
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        ListTile(
+          visualDensity: VisualDensity(vertical: -4),
+          leading: Radio(
+            toggleable: true,
+            value: 'fifth',
+            groupValue: widget.fifthButton ? 'fifth' : '',
+            activeColor: Theme.of(context).buttonColor,
+            onChanged: (value) {
+              setState(() {
+                widget.fifthButton = !widget.fifthButton;
+              });
+            },
+          ),
+          title: Text(
+            widget.fifthOption,
+            style: const TextStyle(
+              color: Colors.white,
+              fontFamily: 'Montserrat',
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+        ListTile(
+          visualDensity: VisualDensity(vertical: -4),
+          leading: Radio(
+            toggleable: true,
+            value: 'sixth',
+            groupValue: widget.sixthButton ? 'sixth' : '',
+            activeColor: Theme.of(context).buttonColor,
+            onChanged: (value) {
+              setState(() {
+                widget.sixthButton = !widget.sixthButton;
+              });
+            },
+          ),
+          title: Text(
+            widget.sixthOption,
+            style: const TextStyle(
+              color: Colors.white,
+              fontFamily: 'Montserrat',
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

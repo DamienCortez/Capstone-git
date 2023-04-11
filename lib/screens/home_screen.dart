@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './assessment_screen.dart';
+import 'assessment.dart';
 import './assessment_prompt_screen.dart';
 import '../widgets/app_drawer.dart';
 

@@ -3,7 +3,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import './screens/splash_screen.dart';
-import './screens/assessment_screen.dart';
+import 'screens/assessment.dart';
 import './screens/home_screen.dart';
 import './screens/assessment_prompt_screen.dart';
 import './screens/auth_screen.dart';
@@ -36,10 +36,10 @@ class _PorterWellnessApp extends State<PorterWellness> {
               ),
         theme: ThemeData(
           primaryColor: const Color.fromRGBO(255, 247, 237, 1),
-          cardColor: const Color.fromRGBO(57,114,105,0.83),
-          buttonColor: const Color.fromRGBO(57, 114, 105, 1),
+          cardColor: const Color.fromRGBO(57, 114, 105, 1),
+          buttonColor: const Color.fromARGB(255, 44, 88, 82),
           buttonTheme: ButtonTheme.of(context).copyWith(
-            buttonColor: const Color.fromRGBO(57, 114, 105, 1),
+            buttonColor: const Color.fromARGB(255, 44, 88, 82),
             textTheme: ButtonTextTheme.primary,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20),
@@ -47,7 +47,7 @@ class _PorterWellnessApp extends State<PorterWellness> {
           ),
         ),
         routes: {
-          AssessmentScreen.routeName: (ctx) => AssessmentScreen(),
+          Assessment.routeName: (ctx) => Assessment(),
           HomeScreen.routeName: (ctx) => HomeScreen(),
           AssessmentPrompt.routeName: (ctx) => AssessmentPrompt(),
         },
