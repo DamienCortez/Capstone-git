@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import '../screens/assessment_prompt_screen.dart';
-import '../screens/matches_screen.dart';
+import '../screens/matches.dart';
 
 /// Created by Jaden Watt (CBU class of '23)
 /// Capstone 2022-23
@@ -35,8 +35,7 @@ class AppDrawer extends StatelessWidget {
             leading: const Icon(Icons.radar),
             title: const Text('Results'),
             onTap: () {
-              Navigator.of(context)
-                  .pushReplacementNamed(MatchesScreen.routeName);
+              Navigator.of(context).pushReplacementNamed(Matches.routeName);
             },
           ),
         ],

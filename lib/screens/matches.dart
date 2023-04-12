@@ -1,26 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:intro_slider/intro_slider.dart';
 
-import '../widgets/app_drawer.dart';
-import '../widgets/porter_slider.dart';
 import './assessment_screen.dart';
-import '../constants/constants.dart';
+import './home_screen.dart';
+import '../widgets/app_drawer.dart';
+import '../constants/matchesconstant.dart';
 
-/// Created by Jaden Watt (CBU class of '23)
+/// Created by Sam Cartledge and Daddy dame (CBU class of '23)
 /// Capstone 2022-23
-class Assessment extends StatefulWidget {
-  Assessment();
+class Matches extends StatefulWidget {
+  Matches();
 
-  static const routeName = '/assessment';
+  static const routeName = '/matches';
 
   @override
-  State<Assessment> createState() => _AssessmentState();
+  State<Matches> createState() => _MatchesState();
 }
 
-class _AssessmentState extends State<Assessment> {
+class _MatchesState extends State<Matches> {
   PageController _controller;
   int currentIndex = 0;
-
+  int _index = 0;
   @override
   void initState() {
     _controller = PageController(initialPage: 0);
@@ -35,10 +34,16 @@ class _AssessmentState extends State<Assessment> {
 
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    var padding1 = MediaQuery.of(context).padding;
+    double newheight = height - padding1.top - padding1.bottom;
+    final mediaQuery = MediaQuery.of(context);
+
     return Scaffold(
-      backgroundColor: Theme.of(context).cardColor,
+      extendBodyBehindAppBar: true,
       appBar: AppBar(
-        backgroundColor: Theme.of(context).cardColor,
+        iconTheme: IconThemeData(color: Colors.black),
+        backgroundColor: Colors.transparent,
         elevation: 0,
         actions: [
           Row(
@@ -47,10 +52,10 @@ class _AssessmentState extends State<Assessment> {
                 onPressed: () {},
                 icon: const Icon(Icons.notifications_none_outlined),
                 iconSize: 32,
-                // color: Colors.white,
+                color: Colors.black,
               ),
               const CircleAvatar(
-                backgroundColor: Colors.white,
+                backgroundColor: Colors.black,
                 backgroundImage: AssetImage('assets/headshot.jpeg'),
               ),
               const SizedBox(
@@ -60,14 +65,22 @@ class _AssessmentState extends State<Assessment> {
           ),
         ],
       ),
-      drawer: AppDrawer(),
-      body: Column(
-        children: [
+      body: Stack(children: <Widget>[
+        Container(
+          padding: mediaQuery.padding,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/background-nologo.png'),
+                fit: BoxFit.cover),
+          ),
+        ),
+        Column(children: <Widget>[
+          SizedBox(height: 120),
           Expanded(
             child: PageView.builder(
               controller: _controller,
               scrollDirection: Axis.horizontal,
-              itemCount: assessments.length,
+              itemCount: matches.length,
               onPageChanged: (index) {
                 setState(() {
                   currentIndex = index;
@@ -76,12 +89,14 @@ class _AssessmentState extends State<Assessment> {
               },
               itemBuilder: (context, index) {
                 return SingleChildScrollView(
+                    child: Padding(
+                  padding: EdgeInsets.all(15.0),
                   child: Column(
                     children: [
-                      assessments[index],
+                      matches[index],
                     ],
                   ),
-                );
+                ));
               },
             ),
           ),
@@ -98,7 +113,7 @@ class _AssessmentState extends State<Assessment> {
                 Container(
                   child: Row(
                     children: List.generate(
-                      assessments.length,
+                      matches.length,
                       (index) => buildDot(index, context),
                     ),
                   ),
@@ -113,9 +128,7 @@ class _AssessmentState extends State<Assessment> {
                       );
                     },
                     child: Text(
-                      currentIndex == assessments.length - 1
-                          ? 'Submit'
-                          : 'Next',
+                      currentIndex == matches.length - 1 ? 'Submit' : 'Next',
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
@@ -123,8 +136,9 @@ class _AssessmentState extends State<Assessment> {
               ],
             ),
           ),
-        ],
-      ),
+        ])
+      ]),
+      drawer: AppDrawer(),
     );
   }
 
