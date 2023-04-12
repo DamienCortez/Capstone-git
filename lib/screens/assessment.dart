@@ -79,24 +79,6 @@ class _AssessmentState extends State<Assessment> {
                   child: Column(
                     children: [
                       assessments[index],
-                      // Container(
-                      //   width: MediaQuery.of(context).size.width,
-                      //   height: 10,
-                      //   color: Theme.of(context).cardColor,
-                      //   child: ListView.builder(
-                      //     scrollDirection: Axis.horizontal,
-                      //     itemCount: assessments.length,
-                      //     itemBuilder: (context, i) {
-                      //       return Padding(
-                      //         padding: const EdgeInsets.all(2.0),
-                      //         child: Container(
-                      //           width: index == i ? 40 : 20,
-                      //           color: Colors.white70,
-                      //         ),
-                      //       );
-                      //     },
-                      //   ),
-                      // ),
                     ],
                   ),
                 );

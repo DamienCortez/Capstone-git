@@ -19,8 +19,36 @@ class _MatchesScreenState extends State<MatchesScreen> {
   int _index = 0;
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.of(context).size.height;
+    var padding1 = MediaQuery.of(context).padding;
+    double newheight = height - padding1.top - padding1.bottom;
     final mediaQuery = MediaQuery.of(context);
+
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        actions: [
+          Row(
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.notifications_none_outlined),
+                iconSize: 32,
+                color: Colors.black,
+              ),
+              const CircleAvatar(
+                backgroundColor: Colors.black,
+                backgroundImage: AssetImage('assets/headshot.jpeg'),
+              ),
+              const SizedBox(
+                width: 10,
+              )
+            ],
+          ),
+        ],
+      ),
       body: Stack(children: <Widget>[
         Container(
           padding: mediaQuery.padding,
@@ -32,10 +60,10 @@ class _MatchesScreenState extends State<MatchesScreen> {
         ),
         Center(
           child: SizedBox(
-            height: 460, // card height
+            height: newheight - 150, // card height
             child: PageView.builder(
               itemCount: 10,
-              controller: PageController(viewportFraction: 0.7),
+              controller: PageController(viewportFraction: 0.9),
               onPageChanged: (int index) => setState(() => _index = index),
               itemBuilder: (_, i) {
                 return Transform.scale(

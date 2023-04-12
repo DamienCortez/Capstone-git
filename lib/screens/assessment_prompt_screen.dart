@@ -128,25 +128,6 @@ class _AssessmentPromptState extends State<AssessmentPrompt> {
                                       ))),
                             ),
                           ),
-                          // ElevatedButton(
-                          //   onPressed: () => Navigator.of(context).popAndPushNamed(HomeScreen.routeName),
-                          //   child: Text('Do it later'),
-                          //   style: ElevatedButton.styleFrom(
-                          //     backgroundColor: Color.fromRGBO(104,164,135,1.000),
-                          //     shape: StadiumBorder(),
-                          //     ),
-                          // )
-
-                          // TextButton(
-                          //   onPressed: () => Navigator.of(context)
-                          //       .popAndPushNamed(HomeScreen.routeName),
-                          //   child: const Text(
-                          //     'Do it later',
-                          //     style: TextStyle(
-                          //       color: Color.fromRGBO(255, 255, 255, 1),
-                          //     ),
-                          //   ),
-                          // ),
                         ],
                       ),
                     ],
