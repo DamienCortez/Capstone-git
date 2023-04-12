@@ -12,22 +12,13 @@ class AppDrawer extends StatelessWidget {
     return Drawer(
       child: Column(
         children: <Widget>[
-          AppBar(title: const Text('Drawer')),
+          AppBar(title: const Text('Menu')),
           ListTile(
             leading: const Icon(Icons.back_hand),
+            title: const Text('Assessment'),
             onTap: () {
               Navigator.of(context)
                   .pushReplacementNamed(AssessmentPrompt.routeName);
-            },
-          ),
-          const Divider(),
-          ListTile(
-            leading: const Icon(Icons.logout),
-            title: const Text('logout'),
-            onTap: () {
-              FirebaseAuth.instance.signOut();
-              Navigator.of(context).popUntil((route) =>
-                  route.isFirst); // sends to login screen when pressed
             },
           ),
           const Divider(),
@@ -36,6 +27,16 @@ class AppDrawer extends StatelessWidget {
             title: const Text('Results'),
             onTap: () {
               Navigator.of(context).pushReplacementNamed(Matches.routeName);
+            },
+          ),
+          const Divider(),
+          ListTile(
+            leading: const Icon(Icons.logout),
+            title: const Text('Log Out'),
+            onTap: () {
+              FirebaseAuth.instance.signOut();
+              Navigator.of(context).popUntil((route) =>
+                  route.isFirst); // sends to login screen when pressed
             },
           ),
         ],

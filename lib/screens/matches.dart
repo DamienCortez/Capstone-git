@@ -5,7 +5,7 @@ import './home_screen.dart';
 import '../widgets/app_drawer.dart';
 import '../constants/matchesconstant.dart';
 
-/// Created by Sam Cartledge and Daddy dame (CBU class of '23)
+/// Created by Sam Cartledge and Damien Cortez (CBU class of '23)
 /// Capstone 2022-23
 class Matches extends StatefulWidget {
   Matches();
@@ -80,7 +80,7 @@ class _MatchesState extends State<Matches> {
             child: PageView.builder(
               controller: _controller,
               scrollDirection: Axis.horizontal,
-              itemCount: matches.length,
+              itemCount: matches.length + 1,
               onPageChanged: (index) {
                 setState(() {
                   currentIndex = index;
@@ -88,54 +88,76 @@ class _MatchesState extends State<Matches> {
                 });
               },
               itemBuilder: (context, index) {
-                return SingleChildScrollView(
-                    child: Padding(
-                  padding: EdgeInsets.all(15.0),
-                  child: Column(
-                    children: [
-                      matches[index],
-                    ],
-                  ),
-                ));
+                return index == 0
+                    ? Container(
+                        height: height,
+                        width: MediaQuery.of(context).size.width,
+                        child: Column(children: <Widget>[
+                          Image.asset('assets/matchesimg.png'),
+                        ]),
+                      )
+                    : SingleChildScrollView(
+                        child: Padding(
+                        padding: EdgeInsets.all(15.0),
+                        child: Column(
+                          children: [
+                            matches[index - 1],
+                          ],
+                        ),
+                      ));
               },
             ),
           ),
           Padding(
-            padding: const EdgeInsets.fromLTRB(
-              15.0,
-              5.0,
-              15.0,
-              15.0,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  child: Row(
-                    children: List.generate(
-                      matches.length,
-                      (index) => buildDot(index, context),
-                    ),
-                  ),
+              padding: const EdgeInsets.fromLTRB(
+                15.0,
+                5.0,
+                15.0,
+                15.0,
+              ),
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(
+                  15.0,
+                  5.0,
+                  15.0,
+                  10.0,
                 ),
-                SizedBox(
-                  height: 30,
-                  child: TextButton(
-                    onPressed: () {
-                      _controller.nextPage(
-                        duration: Duration(milliseconds: 100),
-                        curve: Curves.bounceIn,
-                      );
-                    },
-                    child: Text(
-                      currentIndex == matches.length - 1 ? 'Submit' : 'Next',
-                      style: TextStyle(color: Colors.white),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      child: Row(
+                        children: List.generate(
+                          matches.length + 1,
+                          (index) => buildDot(index, context),
+                        ),
+                      ),
                     ),
-                  ),
+                    SizedBox(
+                      height: 40,
+                      child: TextButton(
+                        onPressed: () {
+                          currentIndex == matches.length
+                              ? Navigator.of(context)
+                                  .popAndPushNamed(HomeScreen.routeName)
+                              : _controller.nextPage(
+                                  duration: Duration(milliseconds: 500),
+                                  curve: Curves.easeIn,
+                                );
+                        },
+                        child: Text(
+                          currentIndex == matches.length ? 'Finish' : 'Swipe',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 0, 0, 0),
+                            fontFamily: 'Inter',
+                            fontSize: 15,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
-          ),
+              )),
         ])
       ]),
       drawer: AppDrawer(),
@@ -148,7 +170,7 @@ class _MatchesState extends State<Matches> {
         _controller.jumpToPage(index);
       },
       child: Container(
-        margin: EdgeInsets.all(2.0),
+        margin: EdgeInsets.all(3.0),
         height: 10,
         // width: 10,
         width: currentIndex == index ? 20 : 10,

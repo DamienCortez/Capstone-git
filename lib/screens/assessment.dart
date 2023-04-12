@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intro_slider/intro_slider.dart';
+import 'package:porter_wellness_app/screens/matches.dart';
 
 import '../widgets/app_drawer.dart';
 import '../widgets/porter_slider.dart';
@@ -107,10 +108,13 @@ class _AssessmentState extends State<Assessment> {
                   height: 30,
                   child: TextButton(
                     onPressed: () {
-                      _controller.nextPage(
-                        duration: Duration(milliseconds: 100),
-                        curve: Curves.bounceIn,
-                      );
+                      currentIndex == assessments.length - 1
+                          ? Navigator.of(context)
+                              .popAndPushNamed(Matches.routeName)
+                          : _controller.nextPage(
+                              duration: Duration(milliseconds: 500),
+                              curve: Curves.easeIn,
+                            );
                     },
                     child: Text(
                       currentIndex == assessments.length - 1

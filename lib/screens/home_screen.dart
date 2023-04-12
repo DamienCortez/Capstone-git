@@ -20,17 +20,37 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home Screen'),
+        iconTheme: IconThemeData(color: Colors.black),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        actions: [
+          Row(
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.notifications_none_outlined),
+                iconSize: 32,
+                color: Colors.black,
+              ),
+              const CircleAvatar(
+                backgroundColor: Colors.black,
+                backgroundImage: AssetImage('assets/headshot.jpeg'),
+              ),
+              const SizedBox(
+                width: 10,
+              )
+            ],
+          ),
+        ],
       ),
-      body: const Center(
-        child: Text(
-          'Home Screen',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
+      body: Stack(children: [
+        Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/Home.png'), fit: BoxFit.cover),
           ),
         ),
-      ),
+      ]),
       drawer: AppDrawer(),
     );
   }
