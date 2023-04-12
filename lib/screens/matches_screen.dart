@@ -75,14 +75,9 @@ class _MatchesScreenState extends State<MatchesScreen> {
                       child: Padding(
                         padding: EdgeInsets.all(0.0),
                         child: Column(children: <Widget>[
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(20.0),
-                            child: Image.asset('assets/card.png'),
-                          ),
-
-                          // Text(
-                          //   "Jessica Gaddy",
-                          //   style: TextStyle(fontSize: 32),
+                          // ClipRRect(
+                          //   borderRadius: BorderRadius.circular(20.0),
+                          //   child: Image.asset('assets/card.png'),
                           // ),
                         ]),
                       ),
