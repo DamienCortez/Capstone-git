@@ -7,6 +7,7 @@ import 'screens/assessment.dart';
 import './screens/home_screen.dart';
 import './screens/assessment_prompt_screen.dart';
 import './screens/auth_screen.dart';
+import './screens/matches_screen.dart';
 
 void main() => runApp(PorterWellness());
 
@@ -50,6 +51,7 @@ class _PorterWellnessApp extends State<PorterWellness> {
           Assessment.routeName: (ctx) => Assessment(),
           HomeScreen.routeName: (ctx) => HomeScreen(),
           AssessmentPrompt.routeName: (ctx) => AssessmentPrompt(),
+          MatchesScreen.routeName: (ctx) => MatchesScreen(),
         },
       ),
     );
